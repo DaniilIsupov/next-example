@@ -1,0 +1,275 @@
+.CartPage {
+    position: relative;
+    outline: none;
+
+    .CartSteps {
+        padding: 0 8px;
+
+        color: rgba(0, 0, 0, 0.87);
+        background-color: rgb(255, 255, 255);
+        transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        box-sizing: border-box;
+        font-family: "Source Sans Pro", sans-serif;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+        border-radius: 2px;
+
+        & > div {
+            display: flex;
+            flex-direction: row;
+            place-content: center space-between;
+            align-items: center;
+
+            .CartStep {
+                flex: 0 0 auto;
+                .CartStepLabel {
+                    height: 72px;
+                    color: rgba(0, 0, 0, 0.87);
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    padding-left: 14px;
+                    padding-right: 14px;
+                    font-weight: 500;
+                    & > span {
+                        display: flex;
+                        align-items: center;
+                        padding-right: 8px;
+                        width: 24px;
+
+                        svg {
+                            display: block;
+                            color: rgb(128, 203, 196);
+                            fill: rgb(128, 203, 196);
+                            height: 24px;
+                            width: 24px;
+                            user-select: none;
+                            transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+                            font-size: 24px;
+                        }
+                    }
+                    &.inactive {
+                        cursor: not-allowed;
+                        svg {
+                            color: rgb(158, 158, 158);
+                            fill: rgb(158, 158, 158);
+                        }
+                    }
+                }
+            }
+
+            & > div:nth-child(even) {
+                flex: 1 1 auto;
+
+                span {
+                    display: block;
+                    border-color: rgb(189, 189, 189);
+                    margin-left: -6px;
+                    border-top-style: solid;
+                    border-top-width: 1px;
+                }
+            }
+        }
+    }
+
+    .CartStepContent {
+        margin-top: 4px;
+        padding: 24px;
+        position: relative;
+
+        color: rgba(0, 0, 0, 0.87);
+        background-color: rgb(255, 255, 255);
+        transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        box-sizing: border-box;
+        font-family: "Source Sans Pro", sans-serif;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+        border-radius: 2px;
+
+        .CartProduct {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px 8px 0;
+
+            .CartProduct__image {
+                img {
+                    color: rgb(255, 255, 255);
+                    background-color: rgb(188, 188, 188);
+                    user-select: none;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+            .CartProduct__content {
+                padding: 4px 24px;
+                line-height: 1.5;
+                flex: 1;
+                overflow: hidden;
+
+                .CartProduct__name {
+                    font-size: 16px;
+                    line-height: 1.1;
+                }
+                .CartProduct__description {
+                    font-size: 14px;
+                    color: rgba(0, 0, 0, 0.54);
+                }
+            }
+            .CartProduct__actions {
+                display: flex;
+                align-items: center;
+
+                .quantity-changer {
+                    display: flex;
+                    align-items: center;
+
+                    .quantity-changer__value {
+                        display: inline-block;
+                        height: 28px;
+                        width: 28px;
+                        line-height: 28px;
+                        border-radius: 50%;
+                        color: #fff;
+                        margin: 0 4px;
+                        text-align: center;
+
+                        background-color: rgb(239, 83, 80);
+                        color: rgb(255, 255, 255);
+
+                        & > span {
+                            white-space: pre;
+
+                            & > span {
+                                position: relative;
+                                display: inline-block;
+
+                                & > span:nth-child(1) {
+                                    visibility: hidden;
+                                }
+                                & > span:nth-child(2) {
+                                    display: inline-block;
+                                    position: absolute;
+                                    left: 0px;
+                                    transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+                                    transform: translateY(0px);
+                                    opacity: 1;
+                                    pointer-events: none;
+                                }
+                            }
+                        }
+                    }
+
+                    button svg {
+                        display: inline-block;
+                        color: rgba(0, 0, 0, 0.87);
+                        fill: currentcolor;
+                        height: 24px;
+                        width: 24px;
+                        user-select: none;
+                        transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+                    }
+                }
+            }
+            .CartProduct__sum {
+                font-size: 20px;
+                font-weight: 500;
+                text-align: right;
+                width: 80px;
+                .CartProduct__sum-title {
+                    display: none;
+                }
+            }
+        }
+
+        .CartAmount {
+            margin-top: 12px;
+            display: flex;
+            justify-content: flex-end;
+
+            .CartAmountItem {
+                margin-top: 16px;
+                font-size: 18px;
+                text-align: right;
+                line-height: 1;
+
+                .CartAmountItem__name {
+                    font-weight: 200;
+                    display: inline-block;
+                    color: rgba(0, 0, 0, 0.54);
+                }
+                .CartAmountItem__value {
+                    font-weight: 200;
+                    font-size: 36px;
+                    overflow: hidden;
+                }
+            }
+            .CartAmountItem--primary {
+                .CartAmountItem__name {
+                    font-weight: 300;
+                }
+                .CartAmountItem__value {
+                    font-weight: 400;
+                }
+            }
+        }
+        .CartActions,
+        .cart-pickup-toggle > div {
+            align-items: center;
+        }
+        .CartActions {
+            margin-top: 24px;
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                border: 10px;
+                outline: none;
+                font-size: inherit;
+                font-weight: inherit;
+                height: 36px;
+                line-height: 36px;
+                min-width: 88px;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+            }
+            & > button:nth-child(1) {
+                color: rgba(0, 0, 0, 0.87);
+
+                span {
+                    letter-spacing: 0px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+            }
+            & > button:nth-child(2) {
+                color: rgb(128, 203, 196);
+
+                span {
+                    letter-spacing: 0px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .CartStep > span,
+    .CartStep > span > span,
+    .CartStepLabel,
+    .CartStepLabel > span,
+    .CartSteps > div,
+    .column.row.row,
+    .fab-cart > span,
+    .row.row.columns {
+        display: flex !important;
+    }
+}

@@ -1,4 +1,4 @@
-# Next.js + SASS frontend example
+# Next.js + Redux + SASS frontend example
 
 ## Setup
 

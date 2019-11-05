@@ -1,0 +1,165 @@
+.app--footer {
+    margin-top: 50px;
+    color: #fff;
+
+    .row {
+        padding: 1.5em 8px;
+    }
+
+    .copyright {
+        font-weight: 500;
+        display: inline-block;
+        margin: 0 15px 5px 0;
+        font-size: 14px;
+        text-decoration: underline;
+    }
+    .lang-picker {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .lang-picker__item {
+            opacity: 0.4;
+            cursor: pointer;
+            display: inline-block;
+            padding: 4px;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            .flag-icon,
+            .flag-icon-background {
+                background-size: contain;
+                background-position: 50%;
+                background-repeat: no-repeat;
+            }
+            .flag-icon {
+                position: relative;
+                display: inline-block;
+                width: 1.33333333em;
+                line-height: 1em;
+            }
+            .flag-icon-ua {
+                background-image: url(/assets/2VM0cT7.svg);
+            }
+            .flag-icon-ru {
+                background-image: url(/assets/1czl6Nx.svg);
+            }
+            .flag-icon-gb {
+                background-image: url(/assets/3B_88CC.svg);
+            }
+            .flag-icon:before {
+                content: "\A0";
+            }
+        }
+        .lang-picker__item--active {
+            opacity: 1;
+            cursor: default;
+        }
+    }
+
+    h5 {
+        font-weight: 400;
+        font-size: 16px;
+        margin: 1em 0;
+        padding: 0 0 0 1em;
+    }
+
+    h5 ~ div svg:first-child {
+        color: #fff !important;
+        fill: #fff !important;
+    }
+
+    h5 ~ div div > div ~ div {
+        color: hsla(0, 0%, 100%, 0.7) !important;
+    }
+
+    h5 ~ div div > span {
+        color: #fff !important;
+    }
+
+    h5 ~ div svg:nth-child(2) {
+        color: hsla(0, 0%, 100%, 0.4) !important;
+        fill: hsla(0, 0%, 100%, 0.4) !important;
+
+        right: 4px;
+        left: unset !important;
+    }
+
+    .app--footer-top {
+        .row {
+            .columns {
+                & > div {
+                    padding: 0;
+                    padding-bottom: 8px;
+                    padding-top: 8px;
+
+                    a.footer-list-item.footer-phone,
+                    a.footer-list-item.footer-app-link,
+                    a.footer-list-item.footer-social-link,
+                    & > div {
+                        span {
+                            border: 10px;
+                            box-sizing: border-box;
+                            display: block;
+                            font-family: "Source Sans Pro", sans-serif;
+                            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                            cursor: pointer;
+                            text-decoration: none;
+                            margin: 0px;
+                            padding: 0px;
+                            outline: none;
+                            font-size: 16px;
+                            font-weight: inherit;
+                            transform: translate(0px, 0px);
+                            color: rgba(0, 0, 0, 0.87);
+                            line-height: 16px;
+                            position: relative;
+                            transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+                            background: none;
+
+                            &:hover {
+                                background-color: rgba(0, 0, 0, 0.1);
+                            }
+
+                            & > div > div {
+                                margin-left: 0;
+                                padding-left: 72px;
+                                padding-right: 16px;
+                                padding-bottom: 16px;
+                                padding-top: 20px;
+                                position: relative;
+
+                                svg {
+                                    display: block;
+                                    color: rgba(0, 0, 0, 0.87);
+                                    fill: #757575;
+                                    height: 24px;
+                                    width: 24px;
+                                    user-select: none;
+                                    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+                                    position: absolute;
+                                    top: 12px;
+                                    margin: 12px;
+                                    left: 4px;
+                                }
+                                & > div:nth-child(3) {
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    height: 16px;
+                                    margin: 0;
+                                    margin-top: 4px;
+                                    // color: rgba(0, 0, 0, 0.54);
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+body,
+html {
+    color: #212121;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    color: #212121;
+    overflow-x: hidden;
+    background-color: #f2f2f2;
+    font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.background,
+body {
+    background-color: #f2f2f2;
+}
+
+.page {
+    &.page--with-drawer {
+        margin-left: 256px;
+    }
+}
+
+.row {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.layout.horizontal {
+    flex-direction: row;
+}
+
+.layout.horizontal,
+.layout.horizontal-reverse,
+.layout.vertical,
+.layout.vertical-reverse {
+    display: flex;
+}
+
+.panel {
+    flex: auto;
+    background-color: #fff;
+    font-family: Source Sans Pro, sans-serif;
+    color: rgba(0, 0, 0, 0.87);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+    border-radius: 2px;
+}
+
+.panel,
+.z1 {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.flex,
+.flex-1 {
+    flex: 1;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+h3 {
+    font-size: 1.17em;
+}
+
+.align-center {
+    justify-content: center;
+}
+
+.layout.center,
+.layout.center-center {
+    align-items: center;
+}
+
+.column,
+.columns {
+    flex: 1 1 0px;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+}
+.small-1 {
+    flex: 0 0 1.33333%;
+    max-width: 1.33333%;
+}
+
+.small-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.small-11 {
+    flex: 0 0 90.66667%;
+    max-width: 90.66667%;
+}
+
+.small-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.layout.end-justified {
+    justify-content: flex-end;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+button > div > span {
+    font-weight: 600 !important;
+}
+
+h2 {
+    padding-left: 16px;
+    height: 36px;
+    line-height: 36px;
+}
+
+h2,
+h3 {
+    padding: 0 1em;
+    font-weight: 400;
+    margin-top: 2em;
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+*,
+.CartAmount *,
+.CartAmount :after,
+.CartAmount :before,
+.panel,
+.sub-header,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+.CartPage *,
+.CartPage :after,
+.CartPage :before {
+    box-sizing: initial;
+}
+
+.app-fullscreen-modal-content {
+    margin: 200px auto 128px;
+    outline: none;
+}
+
+.small-order-1 {
+    order: 1;
+}
+
+.small-order-2 {
+    order: 2;
+}
+
+.CartAmountItem__value,
+.delivery-param__value,
+.main-header h2 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+}
+
+.CardText {
+    padding: 16px;
+    .CardText__title {
+        font-size: 24px;
+    }
+    .CardText__subtitle {
+        margin-top: 8px;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.8);
+        line-height: 1.5;
+    }
+}
+.CardContent,
+.CardText {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+.CardContent {
+    .CardActions {
+        border-top: 1px solid #eee;
+        .ProductPicker {
+            padding: 8px;
+            width: 100%;
+        }
+        .CardActions__bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 55px;
+            max-height: 55px;
+            padding: 8px;
+            .ProductParams__price {
+                font-weight: 700;
+                font-size: 24px;
+                display: flex;
+                align-items: center;
+                padding: 0 8px;
+            }
+            .quantity-changer {
+                display: flex;
+                align-items: center;
+
+                .quantity-changer__value {
+                    display: inline-block;
+                    height: 28px;
+                    width: 28px;
+                    line-height: 28px;
+                    border-radius: 50%;
+                    color: #fff;
+                    margin: 0 4px;
+                    text-align: center;
+
+                    background-color: rgb(239, 83, 80);
+                    color: rgb(255, 255, 255);
+
+                    span {
+                        display: inline-block;
+                        white-space: pre;
+                    }
+                    span > span > span:nth-child(2) {
+                        display: inline-block;
+                        position: absolute;
+                        left: 0px;
+                        transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+                        transform: translateY(0px);
+                        opacity: 1;
+                        pointer-events: none;
+                    }
+                }
+                svg {
+                    display: inline-block;
+                    color: rgba(0, 0, 0, 0.87);
+                    fill: currentcolor;
+                    height: 24px;
+                    width: 24px;
+                    user-select: none;
+                    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+                }
+            }
+            & > button {
+                border: 10px;
+                box-sizing: border-box;
+                font-family: "Source Sans Pro", sans-serif;
+                margin: 0px;
+                padding: 0px;
+                height: 36px;
+                line-height: 36px;
+                min-width: 88px;
+                color: rgb(239, 83, 80);
+                border-radius: 2px;
+
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 14px;
+
+                &:hover {
+                    background-color: rgba(153, 153, 153, 0.2);
+                }
+            }
+        }
+    }
+}
+.z11 {
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2), 0 11px 15px 1px rgba(0, 0, 0, 0.14),
+        0 4px 20px 3px rgba(0, 0, 0, 0.12);
+}
+.btn,
+.btn > span,
+address {
+    display: inline-block;
+}
+
+address {
+    font-style: normal;
+}
+
+hr,
+input[type="search"] {
+    box-sizing: content-box;
+}
+
+hr {
+    height: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+legend,
+td,
+th {
+    padding: 0;
+}
+
+@media screen and (max-width: 63.9375em) {
+    .app-fullscreen-modal-content {
+        margin: 64px auto;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .column,
+    .columns {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem;
+    }
+    .medium-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .medium-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .medium-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .medium-order-1 {
+        order: 1;
+    }
+    .medium-order-2 {
+        order: 2;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .large-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+    .large-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+    .large-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .large-7 {
+        flex: 0 0 53.33333%;
+        max-width: 53.33333%;
+    }
+    .large-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .large-expand {
+        flex: 1 1 0px;
+    }
+    .app-fullscreen-modal-content {
+        width: 100%;
+        max-width: 1200px;
+        position: relative;
+    }
+}
+.align-right {
+    justify-content: flex-end;
+}
+.container,
+.row.wide {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1600px;
+}
+
+@media screen and (min-width: 75em) {
+    .xlarge-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+}
+
+@media screen and (min-width: 90em) {
+    .xxlarge-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}

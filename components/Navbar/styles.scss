@@ -1,0 +1,146 @@
+.navbar-wrapper {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #ffffff;
+    transition: transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);
+    border-radius: 0px;
+    height: 100%;
+    width: 256px;
+    position: fixed;
+    z-index: 1300;
+    left: 0;
+    top: 0;
+    transform: translate(-266px, 0px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &.show {
+        transform: translate(0px, 0);
+    }
+
+    hr {
+        margin: 0;
+        margin-top: -1px;
+        margin-left: 0;
+        height: 1px;
+        border: none;
+        background-color: #e0e0e0;
+    }
+
+    .app-navbar {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        .app-navbar-select {
+            font-family: "Source Sans Pro", sans-serif;
+            padding: 8px 16px !important;
+
+            .MuiInputLabel-root,
+            .MuiInput-root {
+                font-size: 16px;
+                width: 100%;
+                display: inline-block;
+                position: relative;
+                background-color: transparent;
+                transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+            }
+            .MuiInputLabel-root {
+                font-size: 12px;
+            }
+            .MuiSvgIcon-root.MuiSelect-icon {
+                max-width: 25px;
+                max-height: 25px;
+            }
+        }
+
+        .phone {
+            padding: 0px 16px 12px 16px;
+
+            .MuiButton-contained {
+                width: 100%;
+            }
+            svg {
+                display: inline-block;
+                color: rgba(0, 0, 0, 0.87);
+                fill: #ffffff;
+                height: 24px;
+                width: 24px;
+                user-select: none;
+                transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+                vertical-align: middle;
+                margin-left: 12px;
+                margin-right: 0;
+            }
+            span {
+                opacity: 1;
+                font-size: 18px;
+                letter-spacing: 0;
+                user-select: none;
+                padding-left: 8px;
+                padding-right: 16px;
+            }
+        }
+
+        .app-menu {
+            margin-top: 15px;
+
+            .app-menu-item {
+                margin-left: 0;
+                margin-top: 1px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+
+                &.active {
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+
+                svg {
+                    display: block;
+                    color: rgba(0, 0, 0, 0.87);
+                    fill: #757575;
+                    height: 24px;
+                    width: 24px;
+                    user-select: none;
+                    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+                    margin: 12px;
+                }
+                span {
+                    user-select: none;
+                }
+            }
+        }
+    }
+}
+
+.menu-background {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: -100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.54);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    will-change: opacity;
+    transform: translateZ(0px);
+    transition: left 0ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 400ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    z-index: 1200;
+    pointer-events: auto;
+
+    &.show {
+        opacity: 1;
+        left: 0px;
+    }
+}
