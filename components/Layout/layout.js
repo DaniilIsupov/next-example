@@ -5,6 +5,8 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import CartModal from '../CartModal/CartModal'
 
+import { i18n, withTranslation } from '../../i18n'
+
 import './styles.scss'
 
 const useWindowSize = () => {
@@ -22,7 +24,7 @@ const useWindowSize = () => {
     return size
 }
 
-const Layout = ({ children, title, headerContent, mainClassName }) => {
+const Layout = ({ children, title, headerContent, mainClassName, t }) => {
     const [width, height] = useWindowSize()
 
     return (
@@ -69,4 +71,8 @@ const Layout = ({ children, title, headerContent, mainClassName }) => {
     )
 }
 
-export default Layout
+// Layout.getInitialProps = async () => ({
+//     namespacesRequired: ['common'],
+// })
+
+export default withTranslation()(Layout)

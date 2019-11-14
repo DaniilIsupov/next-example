@@ -3,15 +3,16 @@ import { useDispatch } from 'react-redux'
 import ButtonBase from '@material-ui/core/ButtonBase'
 import { withRedux } from '../lib/redux'
 import Layout from '../components/Layout/Layout'
+import { i18n, withTranslation } from '../i18n'
 
 import './main.scss'
 import './about-styles.scss'
 
-const AboutPage = () => {
+const AboutPage = ({ t }) => {
 	return (
 		<>
 			<Layout
-				title="О нас"
+				title={t('about.page-title')}
 				mainclassNameName="background"
 			>
 				<div className="row">
@@ -41,7 +42,7 @@ const AboutPage = () => {
 					</article>
 					<aside className="contacts columns large-6 small-12 small-order-1 medium-order-2" itemScope="" itemType="http://schema.org/LocalBusiness">
 						<meta itemProp="name" content="Dinonna" />
-						<h3 className="header-md">Контакты</h3>
+						<h3 className="header-md">{t('contacts.heading')}</h3>
 						<div className="panel z1">
 							<div style={{ padding: '8px 0px' }}>
 								<ButtonBase component="a" href="tel:903-903">
@@ -52,7 +53,7 @@ const AboutPage = () => {
 													<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path>
 												</svg>
 												<div>903-903</div>
-												<div>Телефон</div>
+												<div>{t('fields.phone')}</div>
 											</div>
 										</div>
 									</span>
@@ -66,7 +67,7 @@ const AboutPage = () => {
 														<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
 													</svg>
 													<address>Нехинская, 57</address>
-													<div>Адрес</div>
+													<div>{t('contacts.address')}</div>
 												</div>
 											</div>
 										</span>
@@ -75,7 +76,7 @@ const AboutPage = () => {
 							</div>
 							<div>
 								<hr className="divider" />
-								<div className="sub-header">Наши приложения</div>
+								<div className="sub-header">{t('contacts.apps.heading')}</div>
 								<div style={{ padding: '8px 0px' }}>
 									<ButtonBase component="a" href="https://play.google.com/store/apps/details?id=com.FoodSoul.VNovgorodDinonnaPizze" target="_blank">
 										<span tabIndex="0" type="button" >
@@ -89,7 +90,7 @@ const AboutPage = () => {
 														<path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z">
 														</path>
 													</svg>
-													<div>Скачать для Android</div>
+													<div>{t('apps.play')}</div>
 												</div>
 											</div>
 										</span>
@@ -107,7 +108,7 @@ const AboutPage = () => {
 														<path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z">
 														</path>
 													</svg>
-													<div>Скачать для iOS</div>
+													<div>{t('apps.appstore')}</div>
 												</div>
 											</div>
 										</span>
@@ -116,7 +117,7 @@ const AboutPage = () => {
 							</div>
 							<div>
 								<hr className="divider" />
-								<div className="sub-header">Мы в соцсетях</div>
+								<div className="sub-header">{t('contacts.socials.heading')}</div>
 								<div style={{ padding: '8px 0px' }}>
 									<ButtonBase component="a" href="https://vk.com/dinonna_pizzeria" target="_blank">
 										<span tabIndex="0" type="button" >
@@ -128,7 +129,7 @@ const AboutPage = () => {
 													<svg viewBox="0 0 24 24" >
 														<path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"></path>
 													</svg>
-													<div>ВКонтакте</div>
+													<div>{t('contacts.socials.vk')}</div>
 												</div>
 											</div>
 										</span>
@@ -145,7 +146,7 @@ const AboutPage = () => {
 														<path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z">
 														</path>
 													</svg>
-													<div>Facebook</div>
+													<div>{t('contacts.socials.fb')}</div>
 												</div>
 											</div>
 										</span>
@@ -162,7 +163,7 @@ const AboutPage = () => {
 														<path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z">
 														</path>
 													</svg>
-													<div style={{ height: '1.1em' }}>Instagram</div>
+													<div style={{ height: '1.1em' }}>{t('contacts.socials.instagram')}</div>
 												</div>
 											</div>
 										</span>
@@ -170,53 +171,53 @@ const AboutPage = () => {
 								</div>
 							</div>
 						</div>
-						<h3 className="header-md">Режим работы</h3>
+						<h3 className="header-md">{t('about.working-hours')}</h3>
 						<div className="panel z1">
 							<table className="working-table">
 								<tbody>
 									<tr className="working-table__row">
 										<td className="working-table__day working-table__day--active">
-											Понедельник
+											{t('weekDays.0')}
 											<meta itemProp="openingHours" content="Mo 11:00-22:55" />
 										</td>
 										<td rowSpan="2" className="working-table__period working-table__period--grouped">11:00 – 22:55</td>
 									</tr>
 									<tr className="working-table__row">
 										<td className="working-table__day">
-											Вторник
+											{t('weekDays.1')}
 											<meta itemProp="openingHours" content="Tu 11:00-22:55" />
 										</td>
 									</tr>
 									<tr className="working-table__row working-table__row--with-border">
 										<td className="working-table__day">
-											Среда
+											{t('weekDays.2')}
 											<meta itemProp="openingHours" content="We 13:00-22:55" />
 										</td>
 										<td rowSpan="1" className="working-table__period">13:00 – 22:55</td>
 									</tr>
 									<tr className="working-table__row working-table__row--with-border">
 										<td className="working-table__day">
-											Четверг
+											{t('weekDays.3')}
 											<meta itemProp="openingHours" content="Th 11:00-22:55" />
 										</td>
 										<td rowSpan="1" className="working-table__period">11:00 – 22:55</td>
 									</tr>
 									<tr className="working-table__row working-table__row--with-border">
 										<td className="working-table__day">
-											Пятница
+											{t('weekDays.4')}
 											<meta itemProp="openingHours" content="Fr 11:00-23:50" />
 										</td>
 										<td rowSpan="2" className="working-table__period working-table__period--grouped">11:00 – 23:50</td>
 									</tr>
 									<tr className="working-table__row">
 										<td className="working-table__day">
-											Суббота
+											{t('weekDays.5')}
 											<meta itemProp="openingHours" content="Sa 11:00-23:50" />
 										</td>
 									</tr>
 									<tr className="working-table__row working-table__row--with-border">
 										<td className="working-table__day">
-											Воскресенье
+											{t('weekDays.6')}
 											<meta itemProp="openingHours" content="Su 11:00-22:55" />
 										</td>
 										<td rowSpan="1" className="working-table__period">11:00 – 22:55</td>
@@ -231,4 +232,8 @@ const AboutPage = () => {
 	)
 }
 
-export default withRedux(AboutPage)
+AboutPage.getInitialProps = async () => ({
+	namespacesRequired: ['common'],
+})
+
+export default withTranslation()(withRedux(AboutPage))

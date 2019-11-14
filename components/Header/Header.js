@@ -4,6 +4,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Fab from '@material-ui/core/Fab'
 import MenuIcon from '@material-ui/icons/Menu'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
+import { i18n, withTranslation } from '../../i18n'
 
 import './styles.scss'
 
@@ -22,7 +23,7 @@ const useWindowPageYOffset = () => {
     return offset
 }
 
-const Header = ({ headerContent, title, width }) => {
+const Header = ({ headerContent, title, width, t }) => {
     const dispatch = useDispatch()
     const offset = useWindowPageYOffset()
 
@@ -101,4 +102,4 @@ const Header = ({ headerContent, title, width }) => {
     )
 }
 
-export default Header
+export default withTranslation()(Header)

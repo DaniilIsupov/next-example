@@ -6,24 +6,25 @@ import Button from '@material-ui/core/Button'
 import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
+import { i18n, withTranslation } from '../../i18n'
 
 import './styles.scss'
 
 const menuItems = [{
-    label: 'Главная',
+    label: 'main.page-title',
     href: '/',
     svgPath: 'M16,20H20V16H16M16,14H20V10H16M10,8H14V4H10M16,8H20V4H16M10,14H14V10H10M4,14H8V10H4M4,20H8V16H4M10,20H14V16H10M4,8H8V4H4V8Z'
 }, {
-    label: 'Акции',
+    label: 'promo.page-title',
     href: '/promo',
     svgPath: 'M18.65,2.85L19.26,6.71L22.77,8.5L21,12L22.78,15.5L19.24,17.29L18.63,21.15L14.74,20.54L11.97,23.3L9.19,20.5L5.33,21.14L4.71,17.25L1.22,15.47L3,11.97L1.23,8.5L4.74,6.69L5.35,2.86L9.22,3.5L12,0.69L14.77,3.46L18.65,2.85M9.5,7A1.5,1.5 0 0,0 8,8.5A1.5,1.5 0 0,0 9.5,10A1.5,1.5 0 0,0 11,8.5A1.5,1.5 0 0,0 9.5,7M14.5,14A1.5,1.5 0 0,0 13,15.5A1.5,1.5 0 0,0 14.5,17A1.5,1.5 0 0,0 16,15.5A1.5,1.5 0 0,0 14.5,14M8.41,17L17,8.41L15.59,7L7,15.59L8.41,17Z'
 }, {
-    label: 'О нас',
+    label: 'about.page-title',
     href: '/about',
     svgPath: 'M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z'
 }]
 
-const Navbar = ({ router, width }) => {
+const Navbar = ({ router, width, t }) => {
     const dispatch = useDispatch()
     const { districtValues, district, isMenuOpen } = useSelector(state => state)
 
@@ -41,7 +42,7 @@ const Navbar = ({ router, width }) => {
                                 <img src="/images/main/f1ccba7aaea76c1c9a6a42294ee05239.png" alt="Dinonna Pizzeria" style={{ width: '100%' }} />
                             </NextLink>
                             <div className="app-navbar-select">
-                                <InputLabel>Район</InputLabel>
+                                <InputLabel>{t('common.district')}</InputLabel>
                                 <Select
                                     value={district}
                                     onChange={e => dispatch({ type: 'SET_DISTRICT', district: e.target.value })}
@@ -71,7 +72,7 @@ const Navbar = ({ router, width }) => {
                                         <NextLink href={v.href} key={i}>
                                             <div className={["app-menu-item", router.pathname === v.href ? "active" : null].join(' ')}>
                                                 <svg viewBox="0 0 24 24"><path d={v.svgPath}></path></svg>
-                                                <span>{v.label}</span>
+                                                <span>{t(`${v.label}`)}</span>
                                             </div>
                                         </NextLink>
                                     ))
@@ -85,4 +86,4 @@ const Navbar = ({ router, width }) => {
     )
 }
 
-export default withRouter(Navbar)
+export default withTranslation()(withRouter(Navbar))

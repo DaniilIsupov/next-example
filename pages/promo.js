@@ -2,17 +2,18 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { withRedux } from '../lib/redux'
 import Layout from '../components/Layout/Layout'
+import { i18n, withTranslation } from '../i18n'
 
 import './main.scss'
 import './promo-styles.scss'
 
-const PromoPage = () => {
+const PromoPage = ({ t }) => {
 	const { sales } = useSelector(state => state)
 
 	return (
 		<>
 			<Layout
-				title="Акции"
+				title={t('promo.page-title')}
 				mainClassName="row"
 			>
 				<div className="promo-content column">
@@ -37,4 +38,8 @@ const PromoPage = () => {
 	)
 }
 
-export default withRedux(PromoPage)
+PromoPage.getInitialProps = async () => ({
+	namespacesRequired: ['common'],
+})
+
+export default withTranslation()(withRedux(PromoPage))

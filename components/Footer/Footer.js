@@ -1,16 +1,16 @@
 import React from 'react'
+import { i18n, withTranslation } from '../../i18n'
 
 import './styles.scss'
 
-const Footer = ({ }) => {
-
+const Footer = ({ t }) => {
     return (
         <footer className="app--footer">
             <div style={{ backgroundColor: '#EF5350' }}>
                 <aside className="app--footer-top">
                     <div className="row">
                         <div className="columns small-12 large-4">
-                            <h5>Контакты</h5>
+                            <h5>{t('contacts.heading')}</h5>
                             <div>
                                 <a href="tel:903-903" target="_blank" className="footer-list-item footer-phone">
                                     <div>
@@ -23,7 +23,7 @@ const Footer = ({ }) => {
                                                         </path>
                                                     </svg>
                                                     <div>903-903</div>
-                                                    <div>Телефон</div>
+                                                    <div>{t('fields.phone')}</div>
                                                 </div>
                                             </div>
                                         </span>
@@ -37,7 +37,7 @@ const Footer = ({ }) => {
                                                     <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
                                                 </svg>
                                                 <address>Нехинская, 57</address>
-                                                <div>Адрес</div>
+                                                <div>{t('contacts.address')}</div>
                                             </div>
                                         </div>
                                     </span>
@@ -45,7 +45,7 @@ const Footer = ({ }) => {
                             </div>
                         </div>
                         <div className="columns small-12 large-4">
-                            <h5>Наши приложения</h5>
+                            <h5>{t('contacts.apps.heading')}</h5>
                             <div>
                                 <a href="https://play.google.com/store/apps/details?id=com.FoodSoul.VNovgorodDinonnaPizze" target="_blank" rel="nofollow" className="footer-list-item footer-app-link">
                                     <div>
@@ -58,7 +58,7 @@ const Footer = ({ }) => {
                                                     <svg viewBox="0 0 24 24">
                                                         <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"></path>
                                                     </svg>
-                                                    <div>Скачать в Google Play</div>
+                                                    <div>{t('apps.play')}</div>
                                                 </div>
                                             </div>
                                         </span>
@@ -75,7 +75,7 @@ const Footer = ({ }) => {
                                                     <svg viewBox="0 0 24 24">
                                                         <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"></path>
                                                     </svg>
-                                                    <div>Скачать в AppStore</div>
+                                                    <div>{t('apps.appstore')}</div>
                                                 </div>
                                             </div>
                                         </span>
@@ -84,7 +84,7 @@ const Footer = ({ }) => {
                             </div>
                         </div>
                         <div className="columns small-12 large-4">
-                            <h5>Мы в соцсетях</h5>
+                            <h5>{t('contacts.socials.heading')}</h5>
                             <div>
                                 <a href="https://vk.com/dinonna_pizzeria" target="_blank" className="footer-list-item footer-social-link" rel="nofollow">
                                     <div>
@@ -97,7 +97,7 @@ const Footer = ({ }) => {
                                                     <svg viewBox="0 0 24 24">
                                                         <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"></path>
                                                     </svg>
-                                                    <div>ВКонтакте</div>
+                                                    <div>{t('contacts.socials.vk')}</div>
                                                 </div>
                                             </div>
                                         </span>
@@ -114,7 +114,7 @@ const Footer = ({ }) => {
                                                     <svg viewBox="0 0 24 24">
                                                         <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"></path>
                                                     </svg>
-                                                    <div>Facebook</div>
+                                                    <div>{t('contacts.socials.fb')}</div>
                                                 </div>
                                             </div>
                                         </span>
@@ -131,7 +131,7 @@ const Footer = ({ }) => {
                                                     <svg viewBox="0 0 24 24">
                                                         <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"></path>
                                                     </svg>
-                                                    <div>Instagram</div>
+                                                    <div>{t('contacts.socials.instagram')}</div>
                                                 </div>
                                             </div>
                                         </span>
@@ -145,16 +145,31 @@ const Footer = ({ }) => {
             <div style={{ backgroundColor: 'rgb(167, 58, 56)' }}>
                 <div className="row">
                     <div className="columns small-11 large-7">
-                        <a href="/privacy-policy/ru" className="copyright" target="_blank" rel="nofollow">Политика конфиденциальности</a>
-                        <a href="/offer/ru" className="copyright" target="_blank" rel="nofollow">Публичная оферта</a>
+                        <a href="/privacy-policy/ru" className="copyright" target="_blank" rel="nofollow">{t('policy.page-title')}</a>
+                        <a href="/offer/ru" className="copyright" target="_blank" rel="nofollow">{t('offer.page-title')}</a>
                         <br />
                         <a className="copyright" href="https://foodsoul.pro" target="_blank">© FoodSoul, 2019</a>
                     </div>
                     <div className="columns layout horizontal end-justified small-1 large-5">
                         <ul className="lang-picker">
-                            <li className="lang-picker__item"><span className="flag-icon flag-icon-ua"></span></li>
-                            <li className="lang-picker__item lang-picker__item--active"><span className="flag-icon flag-icon-ru"></span></li>
-                            <li className="lang-picker__item"><span className="flag-icon flag-icon-gb"></span></li>
+                            <li
+                                className={["lang-picker__item", i18n.language === 'ua' ? "lang-picker__item--active" : null].join(' ')}
+                                onClick={() => i18n.changeLanguage('ua')}
+                            >
+                                <span className="flag-icon flag-icon-ua"></span>
+                            </li>
+                            <li
+                                className={["lang-picker__item", i18n.language === 'ru' ? "lang-picker__item--active" : null].join(' ')}
+                                onClick={() => i18n.changeLanguage('ru')}
+                            >
+                                <span className="flag-icon flag-icon-ru"></span>
+                            </li>
+                            <li
+                                className={["lang-picker__item", i18n.language === 'gb' ? "lang-picker__item--active" : null].join(' ')}
+                                onClick={() => i18n.changeLanguage('gb')}
+                            >
+                                <span className="flag-icon flag-icon-gb"></span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -163,4 +178,4 @@ const Footer = ({ }) => {
     )
 }
 
-export default Footer
+export default withTranslation()(Footer)

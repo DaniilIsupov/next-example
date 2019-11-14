@@ -39,7 +39,7 @@ const initialState = {
   featured: data.data.featured,
   products: data.data.products,
   cart: Array.isArray(cart) ? cart : [],
-  isCartModalOpen: false
+  isCartModalOpen: false,
 }
 
 const reducer = (state = initialState, action) => {

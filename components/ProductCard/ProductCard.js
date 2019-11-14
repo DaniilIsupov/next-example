@@ -2,10 +2,11 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ButtonBase from '@material-ui/core/ButtonBase'
 import IconButton from '@material-ui/core/IconButton'
+import { i18n, withTranslation } from '../../i18n'
 
 import './styles.scss'
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, t }) => {
     const dispatch = useDispatch()
     const { cart } = useSelector(state => state)
 
@@ -58,7 +59,7 @@ const ProductCard = ({ product }) => {
                             {
                                 count < 1 && (
                                     <ButtonBase onClick={() => dispatch({ type: 'SET_CART', cart: [...cart, product.id] })}>
-                                        В корзину
+                                        {t('product.toCart')}
                                     </ButtonBase>
                                 )
                             }
@@ -104,4 +105,4 @@ const ProductCard = ({ product }) => {
     )
 }
 
-export default ProductCard
+export default withTranslation()(ProductCard)

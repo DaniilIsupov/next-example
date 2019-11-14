@@ -1,0 +1,264 @@
+{
+    "common": {
+        "ok": "ОК",
+        "cancel": "Cancel",
+        "accept": "Accept",
+        "acceptMore": "Okay",
+        "district": "District",
+        "city": "City",
+        "qrcode": "QR-code",
+        "from": "from",
+        "free": "Free!",
+        "noThanks": "No, thanks",
+        "download": "Download",
+        "next": "Next",
+        "back": "Back",
+        "clear": "Clear",
+        "menu": "Menu",
+        "more": "More"
+    },
+    "blocked": {
+        "message": "Unfortunately, the site is temporarily down"
+    },
+    "fields": {
+        "phone": "Phone",
+        "name": "Name",
+        "email": "E-mail",
+        "street": "Street",
+        "home": "Home",
+        "floor": "Floor",
+        "housing": "Housing",
+        "change": "Change from",
+        "entrance_code": "Intercom code",
+        "entrance": "Entrance",
+        "comment": "Comment",
+        "apartment": "Apartment (office)",
+        "pickup": "Pickup",
+        "payment": "Payment",
+        "persons": "Persons",
+        "sender_name": "Sender Name",
+        "sender_phone": "Sender Phone",
+        "recipient_name": "Recipient Name",
+        "recipient_phone": "Recipient Phone",
+        "sender_email": "Sender E-Mail",
+        "discount": "Discount card",
+        "delivery-at-time": "Deliver on time",
+        "delivery-time": "Delivery time",
+        "delivery-date": "Delivery date",
+        "onlinePaymentMethod": "Payment method",
+        "selectPickupAddress": "Select pickup address",
+        "cooking-at-time": "Make for time"
+    },
+    "payments": {
+        "cash": "Сash payment",
+        "card_courier": "Сard to the courier",
+        "online": "Online"
+    },
+    "time": {
+        "d": "d",
+        "day": "day",
+        "day2": "days",
+        "days": "days",
+        "h": "h",
+        "hour": "hour",
+        "hour2": "hours",
+        "hours": "hours",
+        "minute": "min"
+    },
+    "deliveryParams": {
+        "timeValue": "Up to {time} min.",
+        "timeName": "Delivery time",
+        "minValue": "{sum}₽",
+        "minName": "Minimal order amount",
+        "costFree": "Free",
+        "costValue": "From {sum}₽",
+        "costName": "Cost of delivery",
+        "freeValue": "From {sum}₽",
+        "freeName": "Free delivery",
+        "cardValue": "Pay with card",
+        "cardName": "We accept Visa & MasterCard",
+        "pickupName": "Pickup"
+    },
+    "pickupParams": {
+        "timeName": "Cooking time"
+    },
+    "apps": {
+        "android": "Download for Android",
+        "ios": "Download for iOS",
+        "android-header": "App for Android",
+        "ios-header": "App for iOS",
+        "play": "Get it on Google Play",
+        "appstore": "Available on the AppStore"
+    },
+    "category": {
+        "page-title": "{categoryName}",
+        "not-found-page-title": "Category not found"
+    },
+    "label": {
+        "page-title": "{labelName}",
+        "not-found-page-title": "Label not found"
+    },
+    "product": {
+        "page-title": "{productName}",
+        "ingredients": "Ingredients",
+        "inprice": "this product is not included in the minimum order value",
+        "indiscount": "product discounts are disabled",
+        "free_delivery": "this product is not included in the amount of free shipping",
+        "toCart": "To cart",
+        "ingredients-info": "*The number of selected ingredients is applied to each selected item"
+    },
+    "products": {
+        "search": "Search...",
+        "empty": "Nothing found"
+    },
+    "about": {
+        "page-title": "About",
+        "working-hours": "Working hours",
+        "around-the-clock": "Around the clock"
+    },
+    "cart": {
+        "payment": {
+            "startText": "After the transition to payment will open a window with the payment system.",
+            "failureText": "An error occurred( Try again",
+            "runningText": "Waiting...",
+            "checkText": "Payment verification takes 1.5 minutes. Please wait for confirmation!",
+            "follow": "Continue"
+        },
+        "payments": {
+            "cash": "By cash",
+            "online": "Online",
+            "card_courier": "Card to a courier"
+        },
+        "page-title": "Cart",
+        "clear": "Clear cart",
+        "continue": "Continue shopping",
+        "headings": {
+            "products": "Confirm your selection",
+            "fields": "Please fill in all details",
+            "pay1": "Payment",
+            "pay2": "optional",
+            "wait": "Waiting for order",
+            "loading": "Sending order...",
+            "error": "An error occurred",
+            "success": "Order is ready"
+        },
+        "minimalOrder": "Not included in the minimum order amount:",
+        "checkout": "Checkout",
+        "free": "Free",
+        "total": "Total",
+        "discount": "Discount",
+        "sum": "Amount",
+        "amount": "Amount",
+        "delivery": "Delivery",
+        "minSumMessage": "Советуем добавить ещё блюд на сумму от {sum} для бесплатной доставки",
+        "minSumError1": "Not enough",
+        "minSumError2": "to the minimum order amount",
+        "orderTimeError": "At this time of day the order is impossible.",
+        "successInfo": "Оperator will call you back in a few minutes.",
+        "successInfoNotWorking": "Оperator will call you back after opening.",
+        "errorTitle": "Something went wrong",
+        "errorInfo": "There was an error sending your order.\n Try to check your internet connection. If you are sure that everything should be fine, contact us.",
+        "clearCartHeading": "Empty trash?",
+        "confidentiality1": "By pressing a button, you confirm your age,",
+        "confidentiality2": " and agree to the processing of personal data in accordance",
+        "confidentiality3": "with the conditions."
+    },
+    "snackbar": {
+        "message": "Added new product",
+        "button": "Purchase"
+    },
+    "header": {
+        "chooseCity": "Choose a city",
+        "clearCartAlert": "To change the city, the basket will be cleared and all goods in it will be deleted. Continue?"
+    },
+    "contacts": {
+        "phone": "Phone",
+        "email": "E-mail",
+        "address": "Address",
+        "heading": "Contacts",
+        "apps": {
+            "heading": "Our mobile apps:"
+        },
+        "socials": {
+            "heading": "We are in social networks:",
+            "vk": "VKontakte",
+            "instagram": "Instagram",
+            "ok": "Odnoklassniki",
+            "fb": "Facebook"
+        }
+    },
+    "main": {
+        "page-title": "Main",
+        "featured": "Popular",
+        "recommend": "Recommend",
+        "showMenu": "SHOW ALL",
+        "more": "Show more"
+    },
+    "reviews": {
+        "page-title": "Reviews",
+        "addReview": "Add review",
+        "text": "Message",
+        "ratings": {
+            "positive": "Liked",
+            "neutral": "Neutral",
+            "negative": "Did not like"
+        },
+        "anonym": "Anonym",
+        "dropzone": "Drag files or click to select files to upload."
+    },
+    "tracker": {
+        "page-title": "Mobidel tracking"
+    },
+    "locationDialog": {
+        "title": "Choose city and / or district"
+    },
+    "warningDialog": {
+        "title": "Attention",
+        "content": "The site may contain information and products intended only for persons who have reached the age of 18 years. Looking through it, you confirm the achievement of this age.",
+        "no": "Thank you for your honest answer, your health is important for us)"
+    },
+    "routes": {
+        "specials": "/",
+        "category": "/category/{slug}",
+        "product": "/product/{slug}",
+        "about": "/about",
+        "cart": "/cart",
+        "reviews": "/reviews",
+        "feedback": "/feedback",
+        "tracker": "/tracker"
+    },
+    "weekDays": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    ],
+    "notWorkingText": "Unfortunately, delivery is not working today. \nPlease, come back later :).",
+    "notWorkingTextPreorder": "Unfortunately, the service is not working today.\nYou can pre-order, and after the opening we will fulfill it.",
+    "notWorkingPreorder": "Unfortunately, the service does not work at this time. Today we are open from {start_time} to {end_time}.\n You can pre-order, and after the opening we will fulfill it.",
+    "notWorking": "Unfortunately, delivery is not working at this time of day. \nToday we are open from {start_time} to {end_time}. Please, come back later :).",
+    "onlyPreorder": "Only pre-order is available",
+    "preorderMinTime": "Minimal pre-order time {minutes} minutes",
+    "pickupMinTime": "Minimum cooking time {time} minutes",
+    "cookiesMessageTop": "Hello! We use Cookies to save some preferences and to optimize the site.",
+    "cookiesMessageBottom": "By continuing to use our website, you consent to the processing of user data (IP address; operating system version; web browser; information about the device (type, manufacturer, model); screen resolution; the presence of Cookies, the presence of JavaScript; the language of the operating system and Browser; the time spent on the site; the user's actions on the website) in order to determine attendance.",
+    "preorderClosed": "Choose a different pre-order time.",
+    "policy": {
+        "page-title": "Privacy policy"
+    },
+    "offer": {
+        "page-title": "Public offer"
+    },
+    "confidentiality": {
+        "page-title": "Personal data confidentiality"
+    },
+    "promo": {
+        "page-title": "Promo"
+    },
+    "catalog": {
+        "page-title": "Catalog"
+    }
+}

@@ -5,13 +5,14 @@ import ButtonBase from '@material-ui/core/ButtonBase'
 import { withRedux } from '../lib/redux'
 import Layout from '../components/Layout/Layout'
 import ProductCard from '../components/ProductCard/ProductCard'
+import { i18n, withTranslation } from '../i18n'
 
 import './main.scss'
 import './index-styles.scss'
 
 const carouselInterval = 5000
 
-const IndexPage = () => {
+const IndexPage = ({ t }) => {
 	const dispatch = useDispatch()
 	const [slideIndex, setSlideIndex] = useState(0)
 
@@ -31,7 +32,7 @@ const IndexPage = () => {
 	return (
 		<>
 			<Layout
-				title="Главная"
+				title={t('main.page-title')}
 				mainClassName="background"
 				headerContent={
 					<Carousel
@@ -80,8 +81,8 @@ const IndexPage = () => {
 											d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z">
 										</path>
 									</svg>
-									<div className="delivery-param__value" itemProp="description">1 ч 20 мин</div>
-									<div className="delivery-param__name" itemProp="name">Время доставки</div>
+									<div className="delivery-param__value" itemProp="description">1 {t('time.h')} 20 {t('time.minute')}</div>
+									<div className="delivery-param__name" itemProp="name">{t('deliveryParams.timeName')}</div>
 								</div>
 								<div className="columns small-6 medium-3 large-expand delivery-param" itemProp="itemListElement" itemScope="" itemType="http://schema.org/Offer">
 									<svg viewBox="0 0 24 24">
@@ -97,7 +98,7 @@ const IndexPage = () => {
 											<span style={{ marginLeft: '0.3em' }}>₽</span>
 										</span>
 									</div>
-									<div className="delivery-param__name" itemProp="name">Мин. сумма заказа</div>
+									<div className="delivery-param__name" itemProp="name">{t('deliveryParams.minName')}</div>
 								</div>
 								<div className="columns small-6 medium-3 large-expand delivery-param" itemProp="itemListElement" itemScope="" itemType="http://schema.org/DeliveryChargeSpecification">
 									<svg viewBox="0 0 24 24">
@@ -113,7 +114,7 @@ const IndexPage = () => {
 											<span style={{ marginLeft: '0.3em' }}>₽</span>
 										</span>
 									</div>
-									<div className="delivery-param__name" itemProp="name">Стоимость доставки</div>
+									<div className="delivery-param__name" itemProp="name">{t('deliveryParams.costName')}</div>
 								</div>
 								<div className="columns small-6 medium-3 large-expand delivery-param" itemProp="itemListElement"
 									itemScope="" itemType="http://schema.org/DeliveryChargeSpecification"><svg viewBox="0 0 24 24"
@@ -130,7 +131,7 @@ const IndexPage = () => {
 											<span style={{ marginLeft: '0.3em' }}>₽</span>
 										</span>
 									</div>
-									<div className="delivery-param__name" itemProp="name">Бесплатная доставка</div>
+									<div className="delivery-param__name" itemProp="name">{t('deliveryParams.freeName')}</div>
 								</div>
 								<div className="columns small-6 medium-3 large-expand delivery-param" itemProp="itemListElement"
 									itemScope="" itemType="http://schema.org/Offer"><svg viewBox="0 0 24 24"
@@ -139,8 +140,8 @@ const IndexPage = () => {
 											d="M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z">
 										</path>
 									</svg>
-									<div className="delivery-param__value" itemProp="description">Оплата картой</div>
-									<div className="delivery-param__name" itemProp="name">У наших курьеров есть терминалы</div>
+									<div className="delivery-param__value" itemProp="description">{t('deliveryParams.cardValue')}</div>
+									<div className="delivery-param__name" itemProp="name">{t('deliveryParams.cardName')}</div>
 								</div>
 							</div>
 						</div>
@@ -155,7 +156,7 @@ const IndexPage = () => {
 				{/*  */}
 				<section>
 					<div className="row main-header">
-						<h2>Мы рекомендуем</h2>
+						<h2>{t('main.recommend')}</h2>
 					</div>
 					<div className="trianglify-background">
 						<div className="row products products--bg products--main">
@@ -189,7 +190,7 @@ const IndexPage = () => {
 												<svg viewBox="0 0 24 24">
 													<path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"></path>
 												</svg>
-												Ещё
+												{t('main.more')}
 												<svg viewBox="0 0 24 24">
 													<path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"></path>
 												</svg>
@@ -204,7 +205,7 @@ const IndexPage = () => {
 				{/*  */}
 				<div className="row catalog-more align-center" style={{ marginTop: '36px' }}>
 					<ButtonBase component="a" href="#">
-						ВСЁ МЕНЮ
+						{t('main.showMenu')}
 					</ButtonBase>
 				</div>
 			</Layout>
@@ -215,7 +216,7 @@ const IndexPage = () => {
 IndexPage.getInitialProps = ({ reduxStore }) => {
 	const { dispatch } = reduxStore
 
-	return {}
+	return { namespacesRequired: ['common'] }
 }
 
-export default withRedux(IndexPage)
+export default withTranslation()(withRedux(IndexPage))

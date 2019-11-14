@@ -5,34 +5,33 @@ import ButtonBase from '@material-ui/core/ButtonBase'
 import Modal from '@material-ui/core/Modal'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
+import { i18n, withTranslation } from '../../i18n'
 
 import './styles.scss'
 
 const steps = [
     {
-        label: 'Подтвердите свой выбор',
+        label: 'cart.headings.products',
         labelSecondary: ''
     },
     {
-        label: 'Заполните свои данные',
+        label: 'cart.headings.fields',
         labelSecondary: ''
     },
     {
-        label: 'Оплата',
-        labelSecondary: 'опционально'
+        label: 'cart.headings.pay1',
+        labelSecondary: 'cart.headings.pay2'
     },
     {
-        label: 'Ожидание заказа',
+        label: 'cart.headings.wait',
         labelSecondary: ''
     }
 ]
 
-const CartModal = () => {
+const CartModal = ({ t }) => {
     const dispatch = useDispatch()
     const { isCartModalOpen, cart, products } = useSelector(state => state)
     const productInCart = products.filter(p => cart.findIndex(c => c === p.id) > -1)
-    // console.log('cart', cart)
-    // console.log('productInCart', productInCart)
     const totalPrice = cart.map(c => products.find(p => p.id === c).params[0].price).reduce((a, b) => a + b, 0)
 
     return (
@@ -65,8 +64,8 @@ const CartModal = () => {
                                                         </svg>
                                                     </span>
                                                     <div>
-                                                        {step.label}
-                                                        <div className="CartLabel__secondary">{step.labelSecondary}</div>
+                                                        {t(`${step.label}`)}
+                                                        <div className="CartLabel__secondary">{t(`${step.labelSecondary}`)}</div>
                                                     </div>
                                                 </span>
                                                 <span disabled="" icon="3"></span>
@@ -132,7 +131,7 @@ const CartModal = () => {
                                                         </div>
                                                     </div>
                                                     <span className="CartProduct__sum">
-                                                        <span className="CartProduct__sum-title">Сумма:</span>
+                                                        <span className="CartProduct__sum-title">{t('cart.amount')}:</span>
                                                         <span>
                                                             <meta itemProp="price" content={count * product.params[0].price} />
                                                             <meta itemProp="priceCurrency" content="RUB" />
@@ -148,7 +147,7 @@ const CartModal = () => {
                                 <hr />
                                 <div className="CartAmount row wide align-right">
                                     <div className="CartAmountItem CartAmountItem--primary columns large-2">
-                                        <div className="CartAmountItem__name">К оплате:</div>
+                                        <div className="CartAmountItem__name">{t('cart.total')}:</div>
                                         <div className="CartAmountItem__value"><span>
                                             <meta itemProp="price" content={totalPrice} />
                                             <meta itemProp="priceCurrency" content="RUB" />
@@ -160,10 +159,10 @@ const CartModal = () => {
                                 </div>
                                 <div className="CartActions">
                                     <ButtonBase>
-                                        <span>Очистить корзину</span>
+                                        <span>{t('cart.clear')}</span>
                                     </ButtonBase>
                                     <ButtonBase>
-                                        <span>Далее</span>
+                                        <span>{t('common.next')}</span>
                                     </ButtonBase>
                                 </div>
                             </div>
@@ -175,4 +174,4 @@ const CartModal = () => {
     )
 }
 
-export default CartModal
+export default withTranslation()(CartModal)
